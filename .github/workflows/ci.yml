@@ -1,0 +1,17 @@
+
+name: Student Task Manager CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download project code
+        uses: actions/checkout@v4
+
+      - name: Run project checks
+        run: bash scripts/check.sh
